@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
+echo "Chris's Custom Buildpack"
+
 # fail fast
 set -e
 
@@ -173,11 +175,11 @@ for DIR in $CACHED_DIRS; do
   cache_copy $DIR $BUILD_DIR $CACHE_DIR
 done
 
-if [ "$LEIN_INCLUDE_IN_SLUG" = "no" ]; then
-    rm -f "$LEIN_JAR_SLUG_PATH"
-    rm -rf $CACHED_DIRS
-fi
+# if [ "$LEIN_INCLUDE_IN_SLUG" = "no" ]; then
+#     rm -f "$LEIN_JAR_SLUG_PATH"
+#     rm -rf $CACHED_DIRS
+# fi
 
-if [ "$LEIN_VERSION" = "1.7.1" ]; then
-    rm -rf $CACHED_DIRS
-fi
+# if [ "$LEIN_VERSION" = "1.7.1" ]; then
+#     rm -rf $CACHED_DIRS
+# fi
